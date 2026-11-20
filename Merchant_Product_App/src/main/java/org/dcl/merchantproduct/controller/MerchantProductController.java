@@ -8,11 +8,11 @@ public class MerchantProductController {
 	static Scanner sc=new Scanner(System.in);
 	static MerchantDao mdao=new MerchantDao();
 	public static void main(String[] args) {
-		System.out.println("1. Save Merchant");
-		System.out.println("2. Update Merchant");
-		System.out.println("3. Find Merchant by ID");
-		System.out.println("4. Verify Mechant by emailId and Password");
-		System.out.println("5. Verify Merchant by Phone and Password");
+		System.out.println("1. Save Merchant.");
+		System.out.println("2. Update Merchant.");
+		System.out.println("3. Find Merchant by ID.");
+		System.out.println("4. Verify Mechant by emailId and Password.");
+		System.out.println("5. Verify Merchant by Phone and Password.");
 		System.out.println("Enter your choice ? ");
 		int choice=sc.nextInt();
 		switch (choice) {
