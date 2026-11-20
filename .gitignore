@@ -1,5 +1,5 @@
 .metadata/
-
+Merchant_Product_App/src/main/resources/META-INF/persistence.xml
 **/target/
 **/.settings/
 **/.classpath
