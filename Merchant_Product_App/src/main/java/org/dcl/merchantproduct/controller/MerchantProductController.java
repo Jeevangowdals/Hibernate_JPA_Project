@@ -1,12 +1,16 @@
 package org.dcl.merchantproduct.controller;
 
+import java.util.List;
 import java.util.Scanner;
 import org.dcl.merchantproduct.dao.MerchantDao;
+import org.dcl.merchantproduct.dao.ProductDao;
 import org.dcl.merchantproduct.dto.Merchant;
+import org.dcl.merchantproduct.dto.Product;
 
 public class MerchantProductController {
 	static Scanner sc=new Scanner(System.in);
 	static MerchantDao mdao=new MerchantDao();
+	static ProductDao pdao=new ProductDao();
 	public static void main(String[] args) {
 		System.out.println("1. Save Merchant.");
 		System.out.println("2. Update Merchant.");
@@ -52,7 +56,7 @@ public class MerchantProductController {
 				findProductByCategory();
 				break;
 
-			default:
+			default:System.out.println("Choose only the choice between 1 and 10!");
 				break;
 		}
 	}
@@ -122,13 +126,58 @@ public class MerchantProductController {
 		}
 	}
 	private static void addProduct() {
+		System.out.println("Enter Merchant ID :");
+		int mid=sc.nextInt();
+		System.out.println("Enter the Product info(Name, Brand, Category, Price) : ");
+		Product p=new Product();
+		p.setName(sc.next());
+		p.setBrand(sc.next());
+		p.setCategory(sc.next());
+		p.setPrice(sc.nextDouble());
+		Product pdb=pdao.addProduct(mid,p);
+		if(pdb!=null) {
+			System.out.println("Product is added with an ID : "+pdb.getId());
+		}else {
+			System.err.println("Unable to add the product since Merchant ID is Invalid.");
+		}
+		
 	}
 	private static void updateProduct() {
 	}
 	private static void findProductByMerchantId() {
+		System.out.println("Enter Merchant id : ");
+		List<Product> lpdb=pdao.findProductByMerchantId(sc.nextInt());
+		if(lpdb.size()>0) {
+			for (Product product : lpdb) {
+				System.out.println(product);
+				
+			}
+		}else {
+			System.err.println("No Product Info found since Merchant ID is Invalid.");
+		}
 	}
 	private static void findProductByBrand() {
+		System.out.println("Enter Brand");
+		List<Product> lpdb=pdao.findProductByBrand(sc.next());
+		if(lpdb.size()>0) {
+			for (Product product : lpdb) {
+				System.out.println(product);
+				
+			}
+		}else {
+			System.err.println("No Product Info found since Brand not found.");
+		}
 	}
 	private static void findProductByCategory() {
+		System.out.println("Enter Category");
+		List<Product> lpdb=pdao.findProductByCategory(sc.next());
+		if(lpdb.size()>0) {
+			for (Product product : lpdb) {
+				System.out.println(product);
+				
+			}
+		}else {
+			System.err.println("No Product Info found since Category is not there.");
+		}
 	}
 }
