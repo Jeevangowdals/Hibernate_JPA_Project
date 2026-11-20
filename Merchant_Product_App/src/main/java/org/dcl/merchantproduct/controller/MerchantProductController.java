@@ -13,6 +13,11 @@ public class MerchantProductController {
 		System.out.println("3. Find Merchant by ID.");
 		System.out.println("4. Verify Mechant by emailId and Password.");
 		System.out.println("5. Verify Merchant by Phone and Password.");
+		System.out.println("6. Add Product");
+		System.out.println("7. Update Product");
+		System.out.println("8. Find Product by MerchantID");
+		System.out.println("9. Find Product by Brand");
+		System.out.println("10. Find Product by Category");
 		System.out.println("Enter your choice ? ");
 		int choice=sc.nextInt();
 		switch (choice) {
