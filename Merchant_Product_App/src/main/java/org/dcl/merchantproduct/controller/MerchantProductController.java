@@ -13,11 +13,11 @@ public class MerchantProductController {
 		System.out.println("3. Find Merchant by ID.");
 		System.out.println("4. Verify Mechant by emailId and Password.");
 		System.out.println("5. Verify Merchant by Phone and Password.");
-		System.out.println("6. Add Product");
-		System.out.println("7. Update Product");
-		System.out.println("8. Find Product by MerchantID");
-		System.out.println("9. Find Product by Brand");
-		System.out.println("10. Find Product by Category");
+		System.out.println("6. Add Product.");
+		System.out.println("7. Update Product.");
+		System.out.println("8. Find Product by MerchantID.");
+		System.out.println("9. Find Product by Brand.");
+		System.out.println("10. Find Product by Category.");
 		System.out.println("Enter your choice ? ");
 		int choice=sc.nextInt();
 		switch (choice) {
@@ -35,6 +35,21 @@ public class MerchantProductController {
 				break;
 			case 5:
 				verifyMerchantByPhoneAndPassword();
+				break;
+			case 6:
+				addProduct();
+				break;
+			case 7:
+				updateProduct();
+				break;
+			case 8:
+				findProductByMerchantId();
+				break;
+			case 9:
+				findProductByBrand();
+				break;
+			case 10:
+				findProductByCategory();
 				break;
 
 			default:
@@ -105,5 +120,15 @@ public class MerchantProductController {
 		}else {
 			System.err.println("Invalid credentials.");
 		}
+	}
+	private static void addProduct() {
+	}
+	private static void updateProduct() {
+	}
+	private static void findProductByMerchantId() {
+	}
+	private static void findProductByBrand() {
+	}
+	private static void findProductByCategory() {
 	}
 }
